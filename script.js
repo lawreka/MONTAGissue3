@@ -24,11 +24,17 @@ function switchImages(){
   function loopImages(){
     setTimeout(function(){
         gallery.style.backgroundImage = "url(" + illustrations[i] + ")";
-        i++;
         if (i < illustrations.length){
           loopImages();
+          i++;
+          console.log(i);
         }
-    }, 2000);
+        else{
+          i = 0;
+          console.log(i);
+          loopImages();
+        }
+    }, 30000);
   }
   loopImages();
 };

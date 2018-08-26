@@ -4,9 +4,20 @@ body{
 }
 #images{
   position: fixed;
+  top: 0;
+  margin: 10%;
   background-image: url("images/paintins-02.png");
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
+  animation: pulse 5s alternate infinite;
+}
+@keyframes pulse{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.1);
+  }
 }
