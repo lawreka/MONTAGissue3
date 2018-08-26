@@ -11,6 +11,16 @@ function pageScroll() {
 function voice(){
   var words = document.getElementById("text").innerHTML;
   var msg = new SpeechSynthesisUtterance(words);
+  var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[17]; // Note: some voices don't support altering params
+// 7 - british man 11 - robot voice 17 - aus female voice
+
+msg.voiceURI = 'native';
+msg.volume = 1; // 0 to 1
+msg.rate = 0.8; // 0.1 to 10
+msg.pitch = 1; //0 to 2
+msg.lang = 'en-US';
+
   window.speechSynthesis.speak(msg);
 }
 
@@ -34,7 +44,7 @@ function switchImages(){
           console.log(i);
           loopImages();
         }
-    }, 30000);
+    }, 60000);
   }
   loopImages();
 };
